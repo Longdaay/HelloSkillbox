@@ -1,17 +1,14 @@
 ﻿#include <iostream>
-#include "Helpers.h"
-
-// выводим значение в консоль
-void PrintResultValue(int value) {
-    std::cout << "Result = " << value << '\n';
-}
+#include <string>
 
 int main() {
-    int x = 3;
-    int y = 5;
+    std::string SomeText = "Skillbox";
 
-    // считаем квадрат суммы значений и выводим в консоль
-    PrintResultValue(GetSummSquareValues(x, y));
+    // консольный вывод информации о переменной SomeText
+    std::cout << "Text = " << SomeText << std::endl;
+    std::cout << "Lenght = " << SomeText.length() << std::endl;
+    std::cout << "First character = " << SomeText[0] << std::endl;
+    std::cout << "Last character = " << SomeText[SomeText.length() - 1] << std::endl; 
 
     return 0;
 }
