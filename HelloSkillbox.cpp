@@ -1,14 +1,28 @@
 ﻿#include <iostream>
-#include <string>
+
+// выводим значения которые задаются с помощью printParametr
+void printValuesByParametr(bool printParameter, int size) {
+    std::cout << "Values 0 to " << size << ":\n";
+    for (int i = 0; i <= size; i++) {
+        if ((i % 2) == printParameter)
+            std::cout << i << " ";
+    }
+    std::cout << std::endl;
+}
+
 
 int main() {
-    std::string SomeText = "Skillbox";
+    int N = 10;
 
-    // консольный вывод информации о переменной SomeText
-    std::cout << "Text = " << SomeText << std::endl;
-    std::cout << "Lenght = " << SomeText.length() << std::endl;
-    std::cout << "First character = " << SomeText[0] << std::endl;
-    std::cout << "Last character = " << SomeText[SomeText.length() - 1] << std::endl; 
+    std::cout << "Even values 0 to " << N << ":\n";
+    for (int i = 0; i <= N; i++) {
+        if (!(i % 2))
+            std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    printValuesByParametr(true, N); // true - odd, false - even values
+
 
     return 0;
 }
