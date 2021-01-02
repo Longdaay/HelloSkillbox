@@ -1,26 +1,34 @@
 ﻿#include <iostream>
-
-// выводим значения которые задаются с помощью printParametr
-void printValuesByParametr(bool printParameter, int size) {
-    std::cout << "Values 0 to " << size << ":\n";
-    for (int i = printParameter; i <= size; i += 2) {
-        std::cout << i << " ";
-    }
-    std::cout << std::endl;
-}
-
+#define CURRENT_DATE 2
 
 int main() {
-    int N = 10;
+    const int N = 5;
+    int arr[N][N];
+    int sum = 0;
+    
 
-    std::cout << "Even values 0 to " << N << ":\n";
-    for (int i = 0; i <= N; i += 2) {
-        std::cout << i << " ";
+    // заполнение матрицы
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            arr[i][j] = i + j;
+        }
+    }
+
+    // вывод матрицы
+    std::cout << "Matrix: \n";
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            std::cout << arr[i][j] << '\t';
+        }
+        std::cout << std::endl;
     }
     std::cout << std::endl;
 
-    printValuesByParametr(true, N); // true - odd, false - even values
-
+    // суммирование строки, индекс которой определяется остатком от деления текущей даты календаря
+    for (int i = 0; i < N; i++) {
+        sum += arr[CURRENT_DATE % N][i];
+    }
+    std::cout << "Result sum row " << CURRENT_DATE % N << " = " << sum << std::endl;
 
     return 0;
 }
