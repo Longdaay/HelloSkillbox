@@ -2,6 +2,7 @@
 #include <vector>
 class Animal {
 public:
+	virtual ~Animal() {}
 	virtual void Voice() {
 		std::cout << "Voice\n";
 	}
@@ -9,6 +10,7 @@ public:
 
 class Dog : public Animal {
 public:
+	~Dog() {}
 	void Voice() override {
 		std::cout << "Woof!\n";
 	}
@@ -16,6 +18,7 @@ public:
 
 class Cat : public Animal {
 public:
+	~Cat() {}
 	void Voice() override {
 		std::cout << "Meow!\n";
 	}
@@ -23,6 +26,7 @@ public:
 
 class Cow : public Animal {
 public:
+	~Cow() {}
 	void Voice() override {
 		std::cout << "Moo!\n";
 	}
