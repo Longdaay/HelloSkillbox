@@ -47,6 +47,7 @@ int main() {
 		animal[i]->Voice();
 		delete animal[i];
 	}
+	delete[] animal;
 
 	return 0;
 }
