@@ -23,7 +23,6 @@ public:
 
 class Cow : public Animal {
 public:
-
 	void Voice() override {
 		std::cout << "Moo!\n";
 	}
@@ -42,6 +41,7 @@ int main() {
 
 	for (int i = 0; i < size; i++) {
 		animal[i]->Voice();
+		delete animal[i];
 	}
 
 	return 0;
